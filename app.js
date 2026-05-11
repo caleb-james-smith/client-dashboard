@@ -101,6 +101,9 @@ let sortKey = 'name';
 let sortDir = 1;
 let editingId = null;
 let currentEmailClientId = null;
+let selectedIds = new Set();
+let lastClickedRowId = null;
+let lastFilteredOrder = [];
 
 // -----------------------------------------------------
 // Storage
@@ -265,29 +268,42 @@ function getFilteredClients() {
 function renderTable() {
   const tbody = document.getElementById('clientTbody');
   const filtered = getFilteredClients();
+  lastFilteredOrder = filtered.map(c => c.id);
   const emptyState = document.getElementById('emptyState');
+
+  // Prune any selections that no longer exist
+  for (const id of [...selectedIds]) {
+    if (!clients.some(c => c.id === id)) selectedIds.delete(id);
+  }
 
   if (clients.length === 0) {
     tbody.innerHTML = '';
     emptyState.hidden = false;
     document.querySelector('.client-table').hidden = true;
+    updateBulkBar();
     return;
   }
   emptyState.hidden = true;
   document.querySelector('.client-table').hidden = false;
 
   if (filtered.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="8" class="muted-cell">No clients match your filters.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="9" class="muted-cell">No clients match your filters.</td></tr>`;
+    updateSelectAllCheckbox();
+    updateBulkBar();
     return;
   }
 
   tbody.innerHTML = filtered.map(c => {
     const flagged = needsFollowUp(c);
+    const isSel = selectedIds.has(c.id);
     const lastContactDisplay = c.lastContact
       ? `${c.lastContact} <span class="muted-inline">(${daysSince(c.lastContact)}d)</span>`
       : '<span class="muted-inline">Never</span>';
     return `
-      <tr data-id="${c.id}">
+      <tr data-id="${c.id}" class="${isSel ? 'selected' : ''}">
+        <td class="row-select">
+          <input type="checkbox" class="row-checkbox" data-id="${c.id}" ${isSel ? 'checked' : ''} aria-label="Select ${escapeHTML(c.name)}" />
+        </td>
         <td class="flag-cell ${flagged ? 'flag-active' : 'flag-inactive'}" title="${flagged ? 'Needs follow-up' : 'On track'}">
           ${flagged ? '⚑' : '○'}
         </td>
@@ -303,6 +319,93 @@ function renderTable() {
         </td>
       </tr>`;
   }).join('');
+
+  updateSelectAllCheckbox();
+  updateBulkBar();
+}
+
+function updateSelectAllCheckbox() {
+  const cb = document.getElementById('selectAll');
+  if (!cb) return;
+  if (lastFilteredOrder.length === 0) {
+    cb.checked = false;
+    cb.indeterminate = false;
+    return;
+  }
+  const selectedVisible = lastFilteredOrder.filter(id => selectedIds.has(id)).length;
+  cb.checked = selectedVisible === lastFilteredOrder.length;
+  cb.indeterminate = selectedVisible > 0 && selectedVisible < lastFilteredOrder.length;
+}
+
+function updateBulkBar() {
+  const bar = document.getElementById('bulkBar');
+  const count = selectedIds.size;
+  if (count === 0) {
+    bar.hidden = true;
+    return;
+  }
+  bar.hidden = false;
+  document.getElementById('bulkCount').textContent = count;
+  document.getElementById('bulkDeleteBtn').textContent =
+    `Delete ${count} selected`;
+}
+
+function handleRowCheckboxClick(e) {
+  const cb = e.target.closest('.row-checkbox');
+  if (!cb) return;
+  const id = cb.dataset.id;
+  const isShift = e.shiftKey;
+
+  if (isShift && lastClickedRowId && lastClickedRowId !== id) {
+    const startIdx = lastFilteredOrder.indexOf(lastClickedRowId);
+    const endIdx = lastFilteredOrder.indexOf(id);
+    if (startIdx !== -1 && endIdx !== -1) {
+      const [lo, hi] = startIdx < endIdx ? [startIdx, endIdx] : [endIdx, startIdx];
+      // The state to apply is the state we just transitioned this checkbox to
+      const target = cb.checked;
+      for (let i = lo; i <= hi; i++) {
+        const rangeId = lastFilteredOrder[i];
+        if (target) selectedIds.add(rangeId);
+        else selectedIds.delete(rangeId);
+      }
+    }
+  } else {
+    if (cb.checked) selectedIds.add(id);
+    else selectedIds.delete(id);
+  }
+
+  lastClickedRowId = id;
+  renderTable();
+}
+
+function handleSelectAllClick(e) {
+  const checked = e.target.checked;
+  for (const id of lastFilteredOrder) {
+    if (checked) selectedIds.add(id);
+    else selectedIds.delete(id);
+  }
+  renderTable();
+}
+
+function clearSelection() {
+  selectedIds.clear();
+  lastClickedRowId = null;
+  renderTable();
+}
+
+function bulkDeleteSelected() {
+  const count = selectedIds.size;
+  if (count === 0) return;
+  const msg = count === 1
+    ? 'Delete 1 selected client? This cannot be undone.'
+    : `Delete ${count} selected clients? This cannot be undone.`;
+  if (!confirm(msg)) return;
+  clients = clients.filter(c => !selectedIds.has(c.id));
+  selectedIds.clear();
+  lastClickedRowId = null;
+  saveClients();
+  renderAll();
+  showToast(`Deleted ${count} client${count === 1 ? '' : 's'}`);
 }
 
 function renderAll() {
@@ -586,8 +689,12 @@ function init() {
     });
   });
 
-  // Table row actions
+  // Table row actions (action buttons + row checkboxes)
   document.getElementById('clientTbody').addEventListener('click', e => {
+    if (e.target.classList.contains('row-checkbox')) {
+      handleRowCheckboxClick(e);
+      return;
+    }
     const btn = e.target.closest('[data-action]');
     if (!btn) return;
     const id = btn.dataset.id;
@@ -596,6 +703,11 @@ function init() {
     if (btn.dataset.action === 'edit') openClientModal(client);
     if (btn.dataset.action === 'email') openEmailModal(client);
   });
+
+  // Header select-all + bulk actions
+  document.getElementById('selectAll').addEventListener('click', handleSelectAllClick);
+  document.getElementById('bulkClearBtn').addEventListener('click', clearSelection);
+  document.getElementById('bulkDeleteBtn').addEventListener('click', bulkDeleteSelected);
 
   // Modal close buttons
   document.querySelectorAll('[data-close]').forEach(btn => {

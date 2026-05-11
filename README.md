@@ -62,6 +62,15 @@ Two send options:
 
 The **Export CSV** button downloads your full client list, so you always have an offline backup.
 
+## Multi-select &amp; bulk delete
+
+- **Select all visible**: click the checkbox in the table header. It selects every row currently shown by your filters (if you have a status filter or search active, only those rows are selected).
+- **Select an individual row**: click its row checkbox. Click again to deselect. Cmd/Ctrl-click on a checkbox works the same as a plain click — it toggles just that row.
+- **Select a range**: click one checkbox, then **Shift+click** another. Every row between the two is set to match the state of the second click (selected if you just turned it on, deselected if you just turned it off).
+- **Delete selected**: a bar appears above the table showing the count. Click **Delete selected** and confirm. Use **Clear selection** to deselect without deleting.
+
+Selections survive sort changes and filter changes, so you can build a multi-status batch (e.g. select some Cold clients, change filter to Past, select more, then delete them all together).
+
 ## Light / dark mode
 
 Click the ☀ / ☾ button in the top right to toggle. Your choice is saved in your browser. If you haven't picked one, the dashboard follows your operating system's color preference and updates live if you change it.

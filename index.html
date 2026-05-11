@@ -64,10 +64,18 @@
     </label>
   </section>
 
+  <div class="bulk-bar" id="bulkBar" hidden>
+    <span><strong id="bulkCount">0</strong> selected</span>
+    <button class="btn btn-secondary" id="bulkClearBtn">Clear selection</button>
+    <div class="spacer"></div>
+    <button class="btn btn-danger" id="bulkDeleteBtn">Delete selected</button>
+  </div>
+
   <main>
     <table class="client-table">
       <thead>
         <tr>
+          <th class="col-select"><input type="checkbox" id="selectAll" title="Select all visible" aria-label="Select all visible" /></th>
           <th data-sort="flag" class="col-flag">⚑</th>
           <th data-sort="name">Name</th>
           <th data-sort="company">Company</th>

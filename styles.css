@@ -299,6 +299,37 @@ main {
 }
 
 .col-flag { width: 36px; text-align: center; }
+.col-select { width: 36px; text-align: center; }
+.col-select input,
+.row-select input {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+}
+
+.client-table tbody tr.selected {
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+}
+.client-table tbody tr.selected:hover {
+  background: color-mix(in srgb, var(--primary) 15%, transparent);
+}
+
+.bulk-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 24px;
+  margin: 0 24px 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  font-size: 13px;
+  color: var(--text);
+}
+.bulk-bar .spacer { flex: 1; }
+.bulk-bar strong { color: var(--primary); }
 
 .flag-cell {
   text-align: center;
