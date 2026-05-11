@@ -281,6 +281,19 @@ main {
   background: var(--row-hover);
 }
 
+.client-table a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.client-table a:hover {
+  text-decoration: underline;
+}
+
+[data-theme="dark"] .client-table a {
+  color: #ffffff;
+}
+
 .client-table tbody tr:last-child td {
   border-bottom: none;
 }
