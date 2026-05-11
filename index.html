@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Freelance Client Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <h1>Client Dashboard</h1>
+      <span class="tagline">Freelance CRM &amp; Outreach</span>
+    </div>
+    <div class="topbar-right">
+      <label class="threshold-label">
+        Follow up after
+        <input type="number" id="thresholdDays" min="1" max="365" value="14" />
+        days
+      </label>
+      <button id="importBtn" class="btn btn-secondary">Import CSV</button>
+      <input type="file" id="csvFile" accept=".csv" hidden />
+      <button id="exportBtn" class="btn btn-secondary">Export CSV</button>
+      <button id="addBtn" class="btn btn-primary">+ Add Client</button>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div class="stat-card">
+      <div class="stat-value" id="statTotal">0</div>
+      <div class="stat-label">Total Clients</div>
+    </div>
+    <div class="stat-card stat-warn">
+      <div class="stat-value" id="statFollowup">0</div>
+      <div class="stat-label">Need Follow-Up</div>
+    </div>
+    <div class="stat-card stat-good">
+      <div class="stat-value" id="statActive">0</div>
+      <div class="stat-label">Active</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="statLeads">0</div>
+      <div class="stat-label">Leads</div>
+    </div>
+  </section>
+
+  <section class="controls">
+    <input type="text" id="searchBox" placeholder="Search by name, company, email..." />
+    <select id="statusFilter">
+      <option value="">All statuses</option>
+      <option value="Lead">Lead</option>
+      <option value="Prospect">Prospect</option>
+      <option value="Active">Active</option>
+      <option value="Past">Past</option>
+      <option value="Cold">Cold</option>
+    </select>
+    <label class="checkbox-label">
+      <input type="checkbox" id="followupOnly" />
+      Follow-up only
+    </label>
+  </section>
+
+  <main>
+    <table class="client-table">
+      <thead>
+        <tr>
+          <th data-sort="flag" class="col-flag">⚑</th>
+          <th data-sort="name">Name</th>
+          <th data-sort="company">Company</th>
+          <th data-sort="email">Email</th>
+          <th data-sort="phone">Phone</th>
+          <th data-sort="status">Status</th>
+          <th data-sort="lastContact">Last Contact</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="clientTbody">
+      </tbody>
+    </table>
+    <div id="emptyState" class="empty-state" hidden>
+      <h2>No clients yet</h2>
+      <p>Import a CSV to get started, or add a client manually.</p>
+      <p><a href="sample-clients.csv" download>Download sample CSV</a></p>
+    </div>
+  </main>
+
+  <!-- Client Edit Modal -->
+  <div class="modal" id="clientModal" hidden>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="clientModalTitle">Add Client</h2>
+        <button class="modal-close" data-close="clientModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="clientForm">
+          <input type="hidden" id="clientId" />
+          <div class="form-grid">
+            <label>Name *<input type="text" id="fName" required /></label>
+            <label>Company<input type="text" id="fCompany" /></label>
+            <label>Email *<input type="email" id="fEmail" required /></label>
+            <label>Phone<input type="text" id="fPhone" /></label>
+            <label>Website<input type="text" id="fWebsite" /></label>
+            <label>Status
+              <select id="fStatus">
+                <option>Lead</option>
+                <option>Prospect</option>
+                <option>Active</option>
+                <option>Past</option>
+                <option>Cold</option>
+              </select>
+            </label>
+            <label>Last Contact<input type="date" id="fLastContact" /></label>
+            <label class="checkbox-row">
+              <input type="checkbox" id="fFlagged" />
+              Manually flag for follow-up
+            </label>
+          </div>
+          <label class="full-width">Notes
+            <textarea id="fNotes" rows="4"></textarea>
+          </label>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" id="deleteClientBtn" hidden>Delete</button>
+        <div class="spacer"></div>
+        <button class="btn btn-secondary" data-close="clientModal">Cancel</button>
+        <button class="btn btn-primary" id="saveClientBtn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Email Composer Modal -->
+  <div class="modal" id="emailModal" hidden>
+    <div class="modal-content modal-large">
+      <div class="modal-header">
+        <h2>Compose Outreach Email</h2>
+        <button class="modal-close" data-close="emailModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="email-recipient" id="emailRecipient"></div>
+        <label>Template
+          <select id="templateSelect"></select>
+        </label>
+        <div class="variable-hint">
+          Available variables: <code>{{name}}</code> <code>{{firstName}}</code>
+          <code>{{company}}</code> <code>{{email}}</code> <code>{{website}}</code>
+          <code>{{myName}}</code> <code>{{lastContact}}</code>
+        </div>
+        <label>Your name (used in <code>{{myName}}</code>)
+          <input type="text" id="senderName" placeholder="Your name" />
+        </label>
+        <label>Subject
+          <input type="text" id="emailSubject" />
+        </label>
+        <label>Body
+          <textarea id="emailBody" rows="14"></textarea>
+        </label>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="copyEmailBtn">Copy to clipboard</button>
+        <div class="spacer"></div>
+        <button class="btn btn-secondary" data-close="emailModal">Close</button>
+        <button class="btn btn-primary" id="openMailtoBtn">Open in mail client</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
