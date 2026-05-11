@@ -1,9 +1,12 @@
 :root {
   --bg: #f6f7fb;
   --card: #ffffff;
+  --card-alt: #fafafa;
+  --row-hover: #fafbfd;
   --border: #e3e6ee;
   --text: #1a1f36;
   --text-muted: #6b7280;
+  --input-bg: #ffffff;
   --primary: #4f46e5;
   --primary-hover: #4338ca;
   --warn: #f59e0b;
@@ -13,6 +16,52 @@
   --danger: #ef4444;
   --danger-hover: #dc2626;
   --shadow: 0 1px 3px rgba(16, 24, 40, 0.06), 0 1px 2px rgba(16, 24, 40, 0.04);
+  --modal-backdrop: rgba(15, 23, 42, 0.5);
+  --toast-bg: #1a1f36;
+  --toast-text: #ffffff;
+  --status-lead-bg: #dbeafe;
+  --status-lead-fg: #1e40af;
+  --status-prospect-bg: #fef3c7;
+  --status-prospect-fg: #92400e;
+  --status-active-bg: #d1fae5;
+  --status-active-fg: #065f46;
+  --status-past-bg: #f3f4f6;
+  --status-past-fg: #4b5563;
+  --status-cold-bg: #e0e7ff;
+  --status-cold-fg: #3730a3;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --card-alt: #243044;
+  --row-hover: #263247;
+  --border: #334155;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --input-bg: #0f172a;
+  --primary: #818cf8;
+  --primary-hover: #6366f1;
+  --warn: #fbbf24;
+  --warn-bg: #422006;
+  --good: #34d399;
+  --good-bg: #064e3b;
+  --danger: #f87171;
+  --danger-hover: #ef4444;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --modal-backdrop: rgba(0, 0, 0, 0.65);
+  --toast-bg: #f1f5f9;
+  --toast-text: #0f172a;
+  --status-lead-bg: #1e3a8a;
+  --status-lead-fg: #bfdbfe;
+  --status-prospect-bg: #78350f;
+  --status-prospect-fg: #fde68a;
+  --status-active-bg: #065f46;
+  --status-active-fg: #a7f3d0;
+  --status-past-bg: #334155;
+  --status-past-fg: #cbd5e1;
+  --status-cold-bg: #3730a3;
+  --status-cold-fg: #c7d2fe;
 }
 
 * { box-sizing: border-box; }
@@ -23,6 +72,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-size: 14px;
+  transition: background 0.2s, color 0.2s;
 }
 
 .topbar {
@@ -66,6 +116,8 @@ body {
   border: 1px solid var(--border);
   border-radius: 4px;
   margin: 0 4px;
+  background: var(--input-bg);
+  color: var(--text);
 }
 
 .btn {
@@ -86,15 +138,35 @@ body {
 .btn-primary:hover { background: var(--primary-hover); }
 
 .btn-secondary {
-  background: white;
+  background: var(--card);
   color: var(--text);
   border-color: var(--border);
 }
 
-.btn-secondary:hover { background: #f3f4f6; }
+.btn-secondary:hover { background: var(--card-alt); }
+
+.btn-icon {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  font-size: 14px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+}
+
+.btn-icon:hover { background: var(--card-alt); }
+
+.theme-icon-light { display: inline; }
+.theme-icon-dark { display: none; }
+[data-theme="dark"] .theme-icon-light { display: none; }
+[data-theme="dark"] .theme-icon-dark { display: inline; }
 
 .btn-danger {
-  background: white;
+  background: var(--card);
   color: var(--danger);
   border-color: var(--danger);
 }
@@ -148,13 +220,16 @@ body {
   padding: 8px 12px;
   border: 1px solid var(--border);
   border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text);
 }
 
 .controls select {
   padding: 8px 12px;
   border: 1px solid var(--border);
   border-radius: 6px;
-  background: white;
+  background: var(--input-bg);
+  color: var(--text);
 }
 
 .checkbox-label {
@@ -190,7 +265,7 @@ main {
 }
 
 .client-table th {
-  background: #fafafa;
+  background: var(--card-alt);
   font-weight: 600;
   font-size: 12px;
   color: var(--text-muted);
@@ -200,10 +275,10 @@ main {
   user-select: none;
 }
 
-.client-table th:hover { background: #f3f4f6; }
+.client-table th:hover { background: var(--row-hover); }
 
 .client-table tbody tr:hover {
-  background: #fafbfd;
+  background: var(--row-hover);
 }
 
 .client-table tbody tr:last-child td {
@@ -233,15 +308,15 @@ main {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  background: #f3f4f6;
+  background: var(--card-alt);
   color: var(--text-muted);
 }
 
-.status-Lead { background: #dbeafe; color: #1e40af; }
-.status-Prospect { background: #fef3c7; color: #92400e; }
-.status-Active { background: var(--good-bg); color: #065f46; }
-.status-Past { background: #f3f4f6; color: #4b5563; }
-.status-Cold { background: #e0e7ff; color: #3730a3; }
+.status-Lead { background: var(--status-lead-bg); color: var(--status-lead-fg); }
+.status-Prospect { background: var(--status-prospect-bg); color: var(--status-prospect-fg); }
+.status-Active { background: var(--status-active-bg); color: var(--status-active-fg); }
+.status-Past { background: var(--status-past-bg); color: var(--status-past-fg); }
+.status-Cold { background: var(--status-cold-bg); color: var(--status-cold-fg); }
 
 .action-btn {
   background: none;
@@ -251,10 +326,11 @@ main {
   cursor: pointer;
   font-size: 12px;
   margin-right: 4px;
+  color: var(--text);
 }
 
 .action-btn:hover {
-  background: #f3f4f6;
+  background: var(--card-alt);
 }
 
 .action-btn.primary {
@@ -265,6 +341,17 @@ main {
 
 .action-btn.primary:hover {
   background: var(--primary-hover);
+}
+
+.muted-cell {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-muted);
+}
+
+.muted-inline {
+  color: var(--text-muted);
+  opacity: 0.75;
 }
 
 .empty-state {
@@ -286,7 +373,7 @@ main {
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.5);
+  background: var(--modal-backdrop);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -378,6 +465,7 @@ main {
   font-family: inherit;
   text-transform: none;
   color: var(--text);
+  background: var(--input-bg);
 }
 
 .modal-body textarea {
@@ -402,7 +490,7 @@ main {
 .full-width { grid-column: 1 / -1; }
 
 .email-recipient {
-  background: #f3f4f6;
+  background: var(--card-alt);
   padding: 8px 12px;
   border-radius: 6px;
   font-size: 13px;
@@ -412,27 +500,28 @@ main {
 .variable-hint {
   font-size: 12px;
   color: var(--text-muted);
-  background: #f9fafb;
+  background: var(--card-alt);
   padding: 8px 12px;
   border-radius: 6px;
   margin-bottom: 12px;
 }
 
 .variable-hint code {
-  background: white;
+  background: var(--input-bg);
   padding: 1px 6px;
   border-radius: 3px;
   border: 1px solid var(--border);
   margin: 0 2px;
   font-size: 11px;
+  color: var(--text);
 }
 
 .toast {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: var(--text);
-  color: white;
+  background: var(--toast-bg);
+  color: var(--toast-text);
   padding: 12px 18px;
   border-radius: 6px;
   font-size: 13px;

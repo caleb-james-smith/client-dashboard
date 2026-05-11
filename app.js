@@ -4,6 +4,7 @@
 
 const STORAGE_KEY = 'fcd_clients_v1';
 const SETTINGS_KEY = 'fcd_settings_v1';
+const THEME_KEY = 'fcd_theme_v1';
 
 const EMAIL_TEMPLATES = {
   'cold-outreach': {
@@ -159,6 +160,55 @@ function escapeHTML(str) {
   })[ch]);
 }
 
+// -----------------------------------------------------
+// Theme management
+// -----------------------------------------------------
+function getStoredTheme() {
+  try {
+    return localStorage.getItem(THEME_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function systemPrefersDark() {
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  const btn = document.getElementById('themeToggle');
+  if (btn) {
+    btn.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+  }
+}
+
+function initTheme() {
+  const stored = getStoredTheme();
+  const theme = stored || (systemPrefersDark() ? 'dark' : 'light');
+  applyTheme(theme);
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme') || 'light';
+  const next = current === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  try {
+    localStorage.setItem(THEME_KEY, next);
+  } catch {}
+}
+
+// Apply theme as early as possible to avoid a light-mode flash on load.
+// (Safe to run before DOMContentLoaded — only touches the <html> element.)
+initTheme();
+
+// React to OS theme changes when the user hasn't picked one manually
+if (window.matchMedia) {
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!getStoredTheme()) applyTheme(e.matches ? 'dark' : 'light');
+  });
+}
+
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -227,15 +277,15 @@ function renderTable() {
   document.querySelector('.client-table').hidden = false;
 
   if (filtered.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding:24px; color:#6b7280;">No clients match your filters.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="8" class="muted-cell">No clients match your filters.</td></tr>`;
     return;
   }
 
   tbody.innerHTML = filtered.map(c => {
     const flagged = needsFollowUp(c);
     const lastContactDisplay = c.lastContact
-      ? `${c.lastContact} <span style="color:#9ca3af;">(${daysSince(c.lastContact)}d)</span>`
-      : '<span style="color:#9ca3af;">Never</span>';
+      ? `${c.lastContact} <span class="muted-inline">(${daysSince(c.lastContact)}d)</span>`
+      : '<span class="muted-inline">Never</span>';
     return `
       <tr data-id="${c.id}">
         <td class="flag-cell ${flagged ? 'flag-active' : 'flag-inactive'}" title="${flagged ? 'Needs follow-up' : 'On track'}">
@@ -491,6 +541,10 @@ function currentEmailClient() {
 function init() {
   loadFromStorage();
   document.getElementById('thresholdDays').value = settings.thresholdDays;
+
+  // Theme toggle — re-apply now that the button exists so the title attr is set
+  applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+  document.getElementById('themeToggle').addEventListener('click', toggleTheme);
 
   // Topbar buttons
   document.getElementById('importBtn').addEventListener('click', () => {

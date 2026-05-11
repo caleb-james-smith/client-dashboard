@@ -62,6 +62,10 @@ Two send options:
 
 The **Export CSV** button downloads your full client list, so you always have an offline backup.
 
+## Light / dark mode
+
+Click the ☀ / ☾ button in the top right to toggle. Your choice is saved in your browser. If you haven't picked one, the dashboard follows your operating system's color preference and updates live if you change it.
+
 ## Files
 
 - `index.html` — page structure
