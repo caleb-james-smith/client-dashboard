@@ -1,9 +1,9 @@
 Name,Company,Email,Phone,Website,Status,Last Contact,Flagged,Notes
-Jane Patel,Patel Bakery,jane@patelbakery.example,555-0142,patelbakery.example,Lead,2026-04-12,,Met at the SF small-biz meetup. Wants a new ordering page.
-Marcus Chen,Northwind Outdoors,marcus@northwindoutdoors.example,555-0177,northwindoutdoors.example,Prospect,2026-04-29,Yes,Sent a proposal two weeks ago — needs nudge.
-Priya Shah,Shah Legal,priya@shahlegal.example,555-0188,shahlegal.example,Active,2026-05-04,,Quarterly maintenance retainer. Site updates this month.
-Tom Reilly,Reilly Roofing,tom@reillyroofing.example,555-0119,reillyroofing.example,Cold,2025-11-08,,Showed interest then went silent.
-Aisha Williams,Bloom Florals,aisha@bloomflorals.example,555-0103,bloomflorals.example,Past,2025-09-14,,Site launched last fall — happy with the result.
-Diego Ramirez,Ramirez Tax Co,diego@ramireztax.example,555-0145,ramireztax.example,Lead,,,Referred by Priya. Hasn't responded to first email yet.
-Sofia Rossi,Rossi Pasta Kitchen,sofia@rossipasta.example,555-0166,rossipasta.example,Prospect,2026-03-22,,Wants a redesign before summer tourist season.
-Kwame Asante,Asante Fitness,kwame@asantefitness.example,555-0124,asantefitness.example,Active,2026-05-09,,Adding a booking system this quarter.
+Jane Patel,Patel Bakery,jane@patelbakery.example,(415) 555-0142,patelbakery.example,Lead,2026-04-12,,Met at the SF small-biz meetup. Wants a new ordering page.
+Marcus Chen,Northwind Outdoors,marcus@northwindoutdoors.example,(206) 555-0177,northwindoutdoors.example,Prospect,2026-04-29,Yes,Sent a proposal two weeks ago — needs nudge.
+Priya Shah,Shah Legal,priya@shahlegal.example,(212) 555-0188,shahlegal.example,Active,2026-05-04,,Quarterly maintenance retainer. Site updates this month.
+Tom Reilly,Reilly Roofing,tom@reillyroofing.example,(617) 555-0119,reillyroofing.example,Cold,2025-11-08,,Showed interest then went silent.
+Aisha Williams,Bloom Florals,aisha@bloomflorals.example,(404) 555-0103,bloomflorals.example,Past,2025-09-14,,Site launched last fall — happy with the result.
+Diego Ramirez,Ramirez Tax Co,diego@ramireztax.example,(512) 555-0145,ramireztax.example,Lead,,,Referred by Priya. Hasn't responded to first email yet.
+Sofia Rossi,Rossi Pasta Kitchen,sofia@rossipasta.example,(312) 555-0166,rossipasta.example,Prospect,2026-03-22,,Wants a redesign before summer tourist season.
+Kwame Asante,Asante Fitness,kwame@asantefitness.example,(305) 555-0124,asantefitness.example,Active,2026-05-09,,Adding a booking system this quarter.

@@ -71,6 +71,7 @@ Click the ☀ / ☾ button in the top right to toggle. Your choice is saved in y
 - `index.html` — page structure
 - `styles.css` — styling
 - `app.js` — all logic (import/export, filtering, email templates, persistence)
-- `sample-clients.csv` — example data
+- `sample-clients.csv` — small example data (8 clients)
+- `sample-clients-100.csv` — larger sample for stress-testing search, filters, and sorting (100 clients)
 
 No build step, no dependencies. Just open the HTML file.

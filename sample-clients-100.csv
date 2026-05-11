@@ -1,0 +1,101 @@
+Name,Company,Email,Phone,Website,Status,Last Contact,Flagged,Notes
+Alejandro Zhang,Khan Bistro,alejandro@khanbistro.example,(303) 555-0186,khanbistro.example,Lead,2026-04-06,Yes,Referred by an existing client. Wants reservations through the site.
+Felix Reyes,Sullivan Roofing,felix@sullivanroofing.example,(917) 555-0153,sullivanroofing.example,Active,2026-05-03,,Connected through a mutual friend. Wants Google reviews embedded.
+Mei Mahmoud,Khan Builders,mei@khanbuilders.example,(602) 555-0113,khanbuilders.example,Lead,,Yes,Asked about a quotes page.
+Amir Yoon,Patel Pet Care,amir@patelpetcare.example,(646) 555-0110,patelpetcare.example,Lead,2026-03-31,,Asked about adding adoption listings.
+Beatrice Bennett,Vasquez Roofing,beatrice@vasquezroofing.example,(215) 555-0129,vasquezroofing.example,Past,2026-01-20,,Connected through a mutual friend. Needs a service-area map. Wrapped successfully — open to a referral.
+Esi Wagner,Kapoor Photography,esi@kapoorphotography.example,(312) 555-0168,kapoorphotography.example,Active,2026-04-17,,Came in via LinkedIn outreach. Asked about client proofing galleries.
+Jordan Cabrera,Holloway Tax Co,jordan@hollowaytaxco.example,(646) 555-0134,hollowaytaxco.example,Past,2026-02-07,,Needs an appointment scheduler. Wrapped successfully — open to a referral.
+Lucia Trinh,Patel Electric,lucia@patelelectric.example,(415) 555-0195,patelelectric.example,Lead,2026-04-24,,Referred by their accountant. Needs a quote request form.
+Fatima Esposito,Reilly Imaging,fatima@reillyimaging.example,(213) 555-0114,reillyimaging.example,Lead,,Yes,Asked about client proofing galleries.
+Lin Mitchell,Soto CrossFit,lin@sotocrossfit.example,(917) 555-0101,sotocrossfit.example,Active,2026-04-19,,Needs class schedule integration.
+Chen Kowalski,Okonkwo Real Estate,chen@okonkworealestate.example,(503) 555-0164,okonkworealestate.example,Prospect,2026-03-21,Yes,Asked about virtual tour embeds. Mentioned ongoing maintenance retainer interest.
+Leo Fischer,Saito Florals,leo@saitoflorals.example,(808) 555-0102,saitoflorals.example,Active,2026-05-07,,Wants Instagram feed embedded. Mentioned ongoing maintenance retainer interest.
+Bianca Chow,Yoon Books,bianca@yoonbooks.example,(917) 555-0198,yoonbooks.example,Past,2026-01-07,Yes,Referred by their accountant. Wants a client questionnaire flow. Wrapped successfully — open to a referral.
+Mei Hayashi,Saito Beauty Bar,mei@saitobeautybar.example,(512) 555-0151,saitobeautybar.example,Active,2026-04-19,,Referred by their accountant. Needs a stylist gallery. Mentioned ongoing maintenance retainer interest.
+Kenji Anderson,Sokolov Gym,kenji@sokolovgym.example,(212) 555-0109,sokolovgym.example,Active,2026-04-18,,Referred by an existing client. Wants a member login area. Mentioned ongoing maintenance retainer interest.
+Priya Hayashi,Saito Vet Clinic,priya@saitovetclinic.example,(808) 555-0131,saitovetclinic.example,Past,2025-07-13,,Referred by an existing client. Asked about adding adoption listings. Wrapped successfully — open to a referral.
+Marcus Pereira,Yoon Yoga,marcus@yoonyoga.example,(303) 555-0107,yoonyoga.example,Active,2026-04-28,,Wants class signups. Mentioned ongoing maintenance retainer interest.
+Nico Esposito,Okafor Coffee,nico@okaforcoffee.example,(415) 555-0109,okaforcoffee.example,Lead,2026-04-05,Yes,Asked about a loyalty signup.
+Bjorn Ito,Foster Bread House,bjorn@fosterbreadhouse.example,(404) 555-0151,fosterbreadhouse.example,Prospect,2026-03-12,Yes,Met at a local chamber event. Needs a menu page redesign.
+Imani Okafor,Williams Pipe Co,imani@williamspipeco.example,(917) 555-0184,williamspipeco.example,Cold,2025-08-11,,Found me through a Google search. Wants 24/7 contact form.
+Ariel Liu,Cabrera Coffee,ariel@cabreracoffee.example,(832) 555-0167,cabreracoffee.example,Active,2026-05-05,Yes,"Connected through a mutual friend. Wants a wholesale-inquiries page. Mid-sized project, ~$8-12k range."
+Maya Duarte,Shah CPA,maya@shahcpa.example,(213) 555-0179,shahcpa.example,Active,2026-05-08,,Referred by their accountant. Asked about a blog for tax tips.
+Jin Ito,Johnson Roof Co,jin@johnsonroofco.example,(512) 555-0158,johnsonroofco.example,Lead,2026-05-06,Yes,Mobile site needs work.
+Benjamin Ruiz,Hayashi Grill,benjamin@hayashigrill.example,(617) 555-0108,hayashigrill.example,Lead,2026-04-17,,Referred by their accountant. Needs photos of the new menu shot and added.
+Vikram Vargas,Rossi Dental,vikram@rossidental.example,(917) 555-0138,rossidental.example,Active,2026-04-19,Yes,"Needs a fresh team photo section. Mid-sized project, ~$8-12k range."
+Devon Kapoor,Kim Espresso Bar,devon@kimespressobar.example,(602) 555-0126,kimespressobar.example,Lead,2026-04-24,,Connected through a mutual friend. Wants a wholesale-inquiries page.
+Yara Okafor,Khan Fitness,yara@khanfitness.example,(305) 555-0181,khanfitness.example,Lead,2026-04-30,,Met at a local chamber event. Needs class schedule integration.
+Chen Chen,Watanabe Cafe,chen@watanabecafe.example,(617) 555-0174,watanabecafe.example,Active,2026-04-23,Yes,Came in via LinkedIn outreach. Needs a menu page redesign.
+Layla Hassan,Wang Law Group,layla@wanglawgroup.example,(617) 555-0199,wanglawgroup.example,Active,2026-04-23,,Referred by their accountant. Asked about a content refresh for SEO. Mentioned ongoing maintenance retainer interest.
+Eliana Nilsson,Asante Builders,eliana@asantebuilders.example,(602) 555-0152,asantebuilders.example,Past,2025-11-05,,Wants a portfolio of past projects. Wrapped successfully — open to a referral.
+Omar Hernandez,Greene Law Office,omar@greenelawoffice.example,(415) 555-0128,greenelawoffice.example,Prospect,2026-05-07,,Came in via LinkedIn outreach. Needs an attorney bio section.
+Kwame Trinh,Reilly Animal Hospital,kwame@reillyanimalhospital.example,(917) 555-0142,reillyanimalhospital.example,Active,2026-05-10,Yes,Wants online pet records access.
+Amara Diallo,Soto Animal Hospital,amara@sotoanimalhospital.example,(602) 555-0155,sotoanimalhospital.example,Prospect,2026-03-31,,"Referred by their accountant. Wants online pet records access. Flexible timeline, no rush."
+Renee Ruiz,Wang Cafe,renee@wangcafe.example,(215) 555-0185,wangcafe.example,Prospect,2026-04-17,,Wants online ordering.
+Rania Lin,Wagner Dental Group,rania@wagnerdentalgroup.example,(512) 555-0170,wagnerdentalgroup.example,Prospect,2026-04-30,Yes,Needs a fresh team photo section.
+Vikram Shah,Lambert Renovations,vikram@lambertrenovations.example,(212) 555-0138,lambertrenovations.example,Active,2026-05-01,,Asked about a quotes page.
+Nia O'Brien,Walsh Plumbing,nia@walshplumbing.example,(312) 555-0184,walshplumbing.example,Active,2026-05-08,,Asked about a coupons page. Mentioned ongoing maintenance retainer interest.
+Fatima Greene,Fernandez Dental,fatima@fernandezdental.example,(808) 555-0178,fernandezdental.example,Lead,2026-05-06,,Asked about appointment reminders.
+Lin Ramirez,Nguyen Roofing,lin@nguyenroofing.example,(212) 555-0196,nguyenroofing.example,Lead,2026-05-04,,Connected through a mutual friend. Mobile site needs work.
+Olivia Brennan,Schmidt Motors,olivia@schmidtmotors.example,(303) 555-0158,schmidtmotors.example,Cold,2026-01-07,,Asked about service-history portal.
+Vikram Yamamoto,Reyes Plumbers,vikram@reyesplumbers.example,(917) 555-0157,reyesplumbers.example,Past,2025-12-21,,Came in via LinkedIn outreach. Wants 24/7 contact form.
+Renee Quinn,Thompson Vet Clinic,renee@thompsonvetclinic.example,(215) 555-0191,thompsonvetclinic.example,Lead,2026-04-23,,Wants online pet records access.
+Devon Holloway,Moreno Flowers,devon@morenoflowers.example,(215) 555-0153,morenoflowers.example,Past,2025-08-16,,Referred by an existing client. E-commerce checkout flow is broken.
+Tariq Williams,Anderson Partners,tariq@andersonpartners.example,(617) 555-0138,andersonpartners.example,Prospect,2026-03-21,,Needs case-study pages.
+Vera Hernandez,Quinn Coffee,vera@quinncoffee.example,(808) 555-0103,quinncoffee.example,Lead,2026-03-29,,Found me through a Google search. Needs e-commerce for beans.
+Wei Ruiz,Asante Gardens,wei@asantegardens.example,(212) 555-0110,asantegardens.example,Active,2026-04-20,,"E-commerce checkout flow is broken. Flexible timeline, no rush."
+Ethan Patel,Lopez Homes,ethan@lopezhomes.example,(646) 555-0135,lopezhomes.example,Past,2025-08-09,,Referred by an existing client. Asked about virtual tour embeds.
+Fatima Vargas,Carter Photography,fatima@carterphotography.example,(415) 555-0125,carterphotography.example,Past,2026-03-02,,Met at a local chamber event. Asked about client proofing galleries. Wrapped successfully — open to a referral.
+Olivia Williams,Jansen Roof Co,olivia@jansenroofco.example,(303) 555-0199,jansenroofco.example,Lead,2026-04-21,Yes,Came in via LinkedIn outreach. Mobile site needs work.
+Lucia Xu,Greene Consulting,lucia@greeneconsulting.example,(415) 555-0113,greeneconsulting.example,Active,2026-04-18,,Asked about a downloadable whitepaper flow.
+Amir Mancini,Ruiz Books,amir@ruizbooks.example,(215) 555-0164,ruizbooks.example,Active,2026-04-20,,Needs FAQ rewrite. Wants to launch before end of quarter.
+Devon Okonkwo,Gallo Pipe Co,devon@gallopipeco.example,(503) 555-0178,gallopipeco.example,Active,2026-04-23,,Connected through a mutual friend. Asked about a coupons page.
+Gabriela Costa,Khan Properties,gabriela@khanproperties.example,(773) 555-0172,khanproperties.example,Lead,2026-04-16,,Came in via LinkedIn outreach. Wants IDX listings integrated.
+Ethan Martinez,Johnson Electrical,ethan@johnsonelectrical.example,(503) 555-0171,johnsonelectrical.example,Lead,,,Reached out after seeing a portfolio piece. Needs a quote request form.
+Sebastian Ito,Watanabe Electrical,sebastian@watanabeelectrical.example,(808) 555-0157,watanabeelectrical.example,Active,2026-05-10,Yes,Reached out after seeing a portfolio piece. Wants a project gallery. Wants to launch before end of quarter.
+Sasha Rossi,Mancini Electrical,sasha@mancinielectrical.example,(917) 555-0142,mancinielectrical.example,Cold,2025-11-12,,Came in via LinkedIn outreach. Wants a project gallery. Went quiet after initial interest.
+Jin Duarte,Ruiz Roof Pros,jin@ruizroofpros.example,(404) 555-0194,ruizroofpros.example,Lead,2026-04-03,,Came in via LinkedIn outreach. Wants Google reviews embedded.
+Isabella Holloway,McAllister Roofing,isabella@mcallisterroofing.example,(917) 555-0116,mcallisterroofing.example,Prospect,2026-04-21,Yes,Came in via LinkedIn outreach. Mobile site needs work.
+Carlos Alvarez,Singh Electrical,carlos@singhelectrical.example,(773) 555-0143,singhelectrical.example,Prospect,2026-04-27,,"Connected through a mutual friend. Needs a quote request form. Mid-sized project, ~$8-12k range."
+Priya Chen,Singh Consulting,priya@singhconsulting.example,(512) 555-0110,singhconsulting.example,Lead,2026-05-03,,Referred by their accountant. Asked about a downloadable whitepaper flow.
+Renee Mitchell,Park Tax & Books,renee@parktaxbooks.example,(713) 555-0139,parktaxbooks.example,Lead,2026-05-07,,Wants a secure document upload.
+Hana Vasquez,Chow Roofing,hana@chowroofing.example,(917) 555-0109,chowroofing.example,Lead,,,Needs a service-area map.
+Amara Holloway,Kim Smiles,amara@kimsmiles.example,(773) 555-0109,kimsmiles.example,Past,2025-11-13,,Asked about appointment reminders.
+Mei Donnelly,Saito Roofing,mei@saitoroofing.example,(503) 555-0118,saitoroofing.example,Active,2026-05-08,Yes,Mobile site needs work.
+Imani O'Brien,Duarte Books,imani@duartebooks.example,(646) 555-0134,duartebooks.example,Active,2026-04-24,,Referred by their accountant. Wants a client questionnaire flow.
+Vera Jansen,Asante Realty,vera@asanterealty.example,(212) 555-0197,asanterealty.example,Lead,2026-04-23,,Wants IDX listings integrated.
+Renee Vargas,O'Brien Electrical,renee@obrienelectrical.example,(713) 555-0181,obrienelectrical.example,Lead,2026-05-05,,Came in via LinkedIn outreach. Asked about a service area calculator.
+Diego Maeda,Nilsson Tavern,diego@nilssontavern.example,(646) 555-0197,nilssontavern.example,Lead,2026-04-11,Yes,Referred by an existing client. Looking to display menus better.
+Aaron Vasquez,Saito Auto Repair,aaron@saitoautorepair.example,(404) 555-0166,saitoautorepair.example,Prospect,2026-04-15,,"Met at a local chamber event. Wants an online appointment form. Larger redesign, potentially $15k+."
+Nia Williams,Quinn Dental,nia@quinndental.example,(415) 555-0190,quinndental.example,Lead,,,Referred by an existing client. Wants online new-patient forms.
+Olivia Duarte,Trinh Bistro,olivia@trinhbistro.example,(512) 555-0165,trinhbistro.example,Prospect,2026-03-24,,"Looking to display menus better. Larger redesign, potentially $15k+."
+Emeka Soto,Reilly Advisors,emeka@reillyadvisors.example,(503) 555-0198,reillyadvisors.example,Cold,2025-07-23,,Connected through a mutual friend. Asked about a downloadable whitepaper flow. Went quiet after initial interest.
+Imani Yamamoto,Lambert Bread House,imani@lambertbreadhouse.example,(773) 555-0168,lambertbreadhouse.example,Cold,2025-10-10,,Referred by their accountant. Needs a menu page redesign. Went quiet after initial interest.
+Emeka Williams,Ito Properties,emeka@itoproperties.example,(713) 555-0105,itoproperties.example,Lead,2026-04-10,,Needs an agent directory.
+Rafael Bauer,Eriksen Bloom Co,rafael@eriksenbloomco.example,(773) 555-0112,eriksenbloomco.example,Cold,2025-09-29,,Found me through a Google search. Wants Instagram feed embedded.
+Benjamin Peters,Johnson Bloom Co,benjamin@johnsonbloomco.example,(646) 555-0183,johnsonbloomco.example,Active,2026-05-08,,Asked about a wedding gallery. Wants to launch before end of quarter.
+Sarah Bauer,Tanaka Electric,sarah@tanakaelectric.example,(512) 555-0129,tanakaelectric.example,Lead,2026-04-13,,Asked about a service area calculator.
+Nia Foster,Watanabe Eatery,nia@watanabeeatery.example,(213) 555-0141,watanabeeatery.example,Cold,2025-07-22,Yes,Met at a local chamber event. Wants reservations through the site. Went quiet after initial interest.
+Serena Wang,Garcia Wellness,serena@garciawellness.example,(646) 555-0179,garciawellness.example,Lead,2026-04-09,,Met at a local chamber event. Asked about a gift card feature.
+Noor Jansen,Wagner Vet Clinic,noor@wagnervetclinic.example,(773) 555-0136,wagnervetclinic.example,Cold,2025-08-21,,Came in via LinkedIn outreach. Asked about adding adoption listings. Went quiet after initial interest.
+Grace Patel,Lambert Wellness,grace@lambertwellness.example,(808) 555-0113,lambertwellness.example,Cold,2025-12-12,,Came in via LinkedIn outreach. Asked about a gift card feature. Went quiet after initial interest.
+Ibrahim Alvarez,Shah Consulting,ibrahim@shahconsulting.example,(808) 555-0136,shahconsulting.example,Cold,2025-07-27,,Needs case-study pages. Went quiet after initial interest.
+Wei Jansen,Walsh Roof Pros,wei@walshroofpros.example,(305) 555-0180,walshroofpros.example,Past,2026-01-22,,Needs a service-area map.
+Tariq McAllister,Yoon Law Group,tariq@yoonlawgroup.example,(512) 555-0141,yoonlawgroup.example,Lead,2026-04-29,,Wants a client portal.
+Rania Kapoor,Foster Garage,rania@fostergarage.example,(808) 555-0137,fostergarage.example,Cold,2025-08-03,,Needs better mobile speed.
+Fatima Walsh,Yamamoto Gardens,fatima@yamamotogardens.example,(917) 555-0146,yamamotogardens.example,Cold,2026-01-18,,Referred by their accountant. E-commerce checkout flow is broken. Went quiet after initial interest.
+Tariq Mitchell,Torres Animal Hospital,tariq@torresanimalhospital.example,(415) 555-0160,torresanimalhospital.example,Lead,,,Referred by their accountant. Wants online pet records access.
+Yara Pereira,Williams Athletic Club,yara@williamsathleticclub.example,(303) 555-0117,williamsathleticclub.example,Active,2026-05-09,,"Met at a local chamber event. Adding a booking system this quarter. Larger redesign, potentially $15k+."
+Noor Mendoza,Wagner Partners,noor@wagnerpartners.example,(305) 555-0153,wagnerpartners.example,Active,2026-04-20,Yes,Met at a local chamber event. Needs case-study pages. Wants to launch before end of quarter.
+Nia O'Brien,Ito Roof Co,nia@itoroofco.example,(617) 555-0169,itoroofco.example,Lead,2026-03-30,,Found me through a Google search. Wants Google reviews embedded.
+Bjorn Vasquez,Hayashi Pipe Co,bjorn@hayashipipeco.example,(212) 555-0106,hayashipipeco.example,Active,2026-04-30,,Referred by their accountant. Wants 24/7 contact form. Mentioned ongoing maintenance retainer interest.
+Ethan Holloway,Maeda Bookkeeping,ethan@maedabookkeeping.example,(212) 555-0135,maedabookkeeping.example,Past,2025-12-28,,Connected through a mutual friend. Wants a client questionnaire flow. Wrapped successfully — open to a referral.
+Daniel Alvarez,Martinez Cafe,daniel@martinezcafe.example,(212) 555-0122,martinezcafe.example,Active,2026-05-02,Yes,"Looking to integrate with their POS. Mid-sized project, ~$8-12k range."
+Nico McAllister,Reilly Power Co,nico@reillypowerco.example,(832) 555-0128,reillypowerco.example,Lead,2026-05-08,,Asked about a service area calculator.
+Jamal Patel,Trinh Auto,jamal@trinhauto.example,(808) 555-0151,trinhauto.example,Lead,2026-05-04,,Wants an online appointment form.
+Jordan Sullivan,Fernandez Fitness,jordan@fernandezfitness.example,(917) 555-0191,fernandezfitness.example,Lead,2026-04-02,,Referred by their accountant. Wants a member login area.
+Chen Vargas,Vargas Grill,chen@vargasgrill.example,(404) 555-0155,vargasgrill.example,Past,2025-07-24,,Connected through a mutual friend. Looking to display menus better. Wrapped successfully — open to a referral.
+Jin Okafor,Liu Eatery,jin@liueatery.example,(305) 555-0187,liueatery.example,Prospect,2026-04-08,Yes,Wants reservations through the site. Wants to launch before end of quarter.
+Sebastian Cabrera,Sokolov Bloom Co,sebastian@sokolovbloomco.example,(713) 555-0145,sokolovbloomco.example,Active,2026-04-19,,Reached out after seeing a portfolio piece. E-commerce checkout flow is broken.
+Jasmine Martinez,Diallo Beauty Bar,jasmine@diallobeautybar.example,(305) 555-0184,diallobeautybar.example,Active,2026-04-25,,Connected through a mutual friend. Asked about a gift card store. Decision maker is the owner; spouse also weighs in.
